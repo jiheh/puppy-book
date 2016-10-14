@@ -1,4 +1,4 @@
-import { RECEIVE_PUPS, RECEIVE_PUP } from './action-creators';
+import { RECEIVE_PUPS, RECEIVE_PUP, CLEAR_PUP } from './action-creators';
 import { combineReducers } from 'redux';
 
 
@@ -17,6 +17,8 @@ function selectedPuppy(state = {}, action) {
 	  switch (action.type) {
     case RECEIVE_PUP:
     	return action.selectedPuppy;
+    case CLEAR_PUP:
+      return action.selectedPuppy;
     default: return state;
   }
 }

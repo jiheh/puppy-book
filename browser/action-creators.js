@@ -1,5 +1,6 @@
 export const RECEIVE_PUPS = 'RECEIVE_PUPS'
 export const RECEIVE_PUP = 'RECEIVE_PUP'
+export const CLEAR_PUP = 'CLEAR_PUP'
 
 export const receivePups = puppies => ({
   type: RECEIVE_PUPS,
@@ -9,6 +10,11 @@ export const receivePups = puppies => ({
 export const receivePup = selectedPuppy => ({
   type: RECEIVE_PUP,
   selectedPuppy
+});
+
+export const clearPup = () => ({
+  type: CLEAR_PUP,
+  selectedPuppy: {}
 });
 
 
