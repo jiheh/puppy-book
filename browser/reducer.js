@@ -1,14 +1,13 @@
+import { RECEIVE_PUPS, receivePups } from './action-creators';
 
-const initialState = { allPuppies: [
-  { id: 1, name: 'Cody' },
-  { id: 2, name: 'Ben' },
-  { id: 3, name: 'Bubba' }
-]
-}
+
+const initialState = { allPuppies: [] }
 
 export default function reducer (state = initialState, action) {
   switch (action.type) {
-  	// case RECEIVE_ALBUMS: return action.albums.map(convertAlbums);
+  	case RECEIVE_PUPS:
+      return Object.assign({}, state, {allPuppies: action.puppies});
+
   	default: return state;
 	}
 }
