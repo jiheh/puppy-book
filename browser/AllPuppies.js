@@ -1,16 +1,15 @@
 import React from 'react';
 
-export default class AllPuppies extends React.Component {
 
-  render () {
-    return (
-      <div>
-        <ul className="list-unstyled">
-          <li><a href="#">PUPPY NAME GOES HERE</a></li>
-          <li><a href="#">PUPPY NAME GOES HERE</a></li>
-          <li><a href="#">PUPPY NAME GOES HERE</a></li>
-        </ul>
-      </div>
-    )
-  }
-}
+export default ({allPuppies}) => (
+  <div>
+    <ul className="list-unstyled">
+      {
+        allPuppies && allPuppies.map(puppy => (
+          <li key={puppy.id}>{puppy.name}</li>
+          )
+        )
+      }
+    </ul>
+  </div>
+)
