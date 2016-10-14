@@ -9,7 +9,7 @@ export default ({selectedPuppy}) => (
 
     {
       (function(){
-        if(selectedPuppy) {
+        if(selectedPuppy.name) {
           var msg = new SpeechSynthesisUtterance(selectedPuppy.name);
           window.speechSynthesis.speak(msg);
         }
