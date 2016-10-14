@@ -6,5 +6,18 @@ export default ({selectedPuppy}) => (
     <div>
       <img src={selectedPuppy.image} />
     </div>
+
+    {
+      (function(){
+        if(selectedPuppy) {
+          var msg = new SpeechSynthesisUtterance(selectedPuppy.name);
+          window.speechSynthesis.speak(msg);
+        }
+      })()
+    }
+
   </div>
-)
+  )
+
+
+
