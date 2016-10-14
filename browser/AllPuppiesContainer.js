@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import AllPuppies from './AllPuppies';
-import { receivePups, fetchPups } from './action-creators'
 
 
 
@@ -12,18 +11,15 @@ const mapStateToProps = ({allPuppies}) => ({
   allPuppies
 });
 
-const mapDispatchToProps = function(dispatch) {
+// const mapDispatchToProps = function(dispatch) {
 
-  return {
-    loadPups: function(){
-      // const action = receivePups(hardcodedPuppies)
-      dispatch(fetchPups());
-    }
-  }
-}
+//   return {
+//     loadPups: function(){
+//       // const action = receivePups(hardcodedPuppies)
+//       dispatch(fetchPups());
+//     }
+//   }
+// }
 
 
-export default connect(
-	mapStateToProps,
-  mapDispatchToProps
-)(AllPuppies);
+export default connect(mapStateToProps)(AllPuppies);

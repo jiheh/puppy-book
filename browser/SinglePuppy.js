@@ -1,15 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class SinglePuppy extends Component {
-
-  render () {
-    return (
-      <div>
-        <h2>PUPPY NAME GOES HERE</h2>
-        <div>
-          <img src="http://placehold.it/400x400" />
-        </div>
-      </div>
-    )
-  }
-}
+export default ({selectedPuppy}) => (
+  <div>
+    <h2>{selectedPuppy.name}</h2>
+    <div>
+      <img src={selectedPuppy.image} />
+    </div>
+  </div>
+)

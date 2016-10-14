@@ -1,13 +1,29 @@
-import { RECEIVE_PUPS, receivePups } from './action-creators';
+import { RECEIVE_PUPS, RECEIVE_PUP } from './action-creators';
+import { combineReducers } from 'redux';
 
 
-const initialState = { allPuppies: [] }
+// const initialState = { allPuppies: [],
+// 											 selectedPuppy: {}}
 
-export default function reducer (state = initialState, action) {
-  switch (action.type) {
+function allPuppies(state = [], action) {
+	switch (action.type) {
   	case RECEIVE_PUPS:
-      return Object.assign({}, state, {allPuppies: action.puppies});
-
-  	default: return state;
+      return action.puppies;
+    default: return state;
 	}
 }
+
+function selectedPuppy(state = {}, action) {
+	  switch (action.type) {
+    case RECEIVE_PUP:
+    	return action.selectedPuppy;
+    default: return state;
+  }
+}
+
+const rootReducer = combineReducers ({
+	allPuppies,
+	selectedPuppy
+})
+
+export default rootReducer;
